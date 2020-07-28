@@ -2,19 +2,19 @@
 //Урок 4
 //Задание 1
 const newObjext = {
-    units: null,
-    tens: null,
     hundreds: null,
-}
+    tens: null,
+    units: null,
+    }
 
 function swapNumToObj(a) {
     if (Math.floor(a) < a || a > 999 || a < 0 || a == NaN) {
         console.log = ('Ошибка');
         return newObjext;
     } else {
-        newObjext.units = Math.floor(a / 100);
+        newObjext.units = Math.floor((a % 100) % 10);
         newObjext.tens = Math.floor((a % 100) / 10);
-        newObjext.hundreds = Math.floor((a % 100) % 10);
+        newObjext.hundreds = Math.floor(a / 100);
     }
     return newObjext;
 }
